@@ -1,0 +1,34 @@
+🎨 Colors
+--------------------------------- 
+primary-color:#000;
+secondry-color:#fff;
+p-color:#5A5A5A;
+available-text-color:#178D00;
+bg-available-color:#E1F9DC;
+icon-color:#5C5252;
+border-color:#E7E4E4;
+btn-bg-color:#F2F2F2;
+
+🔠 Typography
+---------------------------------
+font-family: "Manrope", sans-serif;
+h1 : 42px
+h2 : 32px
+p : 16px
+btn : 14 - 16 px
+
+📏 Spacing
+---------------------------------
+container << width : 848px << padding : 128px 0;
+🔲 Components
+---------------------------------
+btn << padding : 14px 28px << radius : 14px
+🌀 Animations
+---------------------------------
+
+⚙️ Breakpoints (Responsive)
+---------------------------------
+mobile << max-width: 767px
+small screen << min-width:768px
+medium screen << min-width: 992px
+large screen << min-width:1200px
