@@ -32,3 +32,498 @@ mobile << max-width: 767px
 small screen << min-width:768px
 medium screen << min-width: 992px
 large screen << min-width:1200px
+
+
+code css 
+
+:root {
+    --primary-color:#000;
+    --secondry-color:#fff;
+    --paragraph-color:#5A5A5A;
+    --available-text-color:#178D00;
+    --bg-available-color:#E1F9DC;
+    --icon-color:#5C5252;
+    --border-color:#E7E4E4;
+    --btn-bg-color:#F2F2F2;
+    --padding-top:180px;
+    --padding-right:128px;
+}
+body {
+    font-family: "Manrope", sans-serif;
+}
+a {
+    text-decoration: none;
+}
+i {
+    color: var(--icon-color);
+    font-size: 20px;
+}
+/* components */
+#container {
+    padding-right: 100px;
+    padding-left: 100px;
+    max-width: 900px;
+    margin: auto;
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+/* Responsive container */
+@media (max-width: 992px) {
+    #container {
+        width: auto;
+        max-width: 848px;
+    }
+}
+@media (max-width: 768px) {
+    #container {
+        padding-right: 32px;
+        padding-left: 32px;
+        border-left: none;
+        border-right: none;
+    }
+}
+@media (max-width: 576px) {
+    #container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--secondry-color);
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 17px;
+    padding: 14px 22px;
+    transition: 0.3s;
+}
+.btn:hover {
+    background-color: var(--primary-color);
+    color: var(--secondry-color);
+}
+h1 {
+    color: var(--primary-color);
+    font-size: 45px;
+}
+@media (max-width: 767px) {
+    h1 {
+        font-size: 26px;
+    }
+}
+h2 {
+    color: var(--primary-color);
+    font-size: 35px;
+    font-weight: 600;
+}
+@media (max-width: 767px) {
+    h2 {
+        font-size: 26px;
+    }
+}
+p {
+    font-size: 16px;
+    color: var(--paragraph-color);
+}
+@media (max-width: 767px) {
+    p {
+        font-size: 14px;
+    }
+}
+/* Header */
+header .header-content{
+    top: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    z-index: 1000;
+    max-width: fit-content;
+}
+.links {
+    padding: 0 5px 0 10px;
+    gap: 10px;
+}
+.links .link{
+    transition: 0.3s;
+}
+.links .link a {
+    padding: 15px 17px;
+    transition: 0.3s;
+    border-radius: 12px;
+}
+.links .link:hover a{
+    background-color: #f6f6f6;
+    padding: 15px 20px;
+}
+.links .link:hover i{
+    color: #000;
+}
+.links .link .line{
+    width: 1.5px;
+    height: 25px;
+    background-color: var(--border-color);
+    margin-left: 10px;
+}
+@media (max-width: 767px) {
+    .btn {
+        padding: 14px 20px;
+    }
+    .links .link a {
+        padding: 10px;
+    }
+}
+@media (max-width:375px) {
+    .links .link a {
+        padding: 5px;
+    }
+}
+/* Hero section */
+.hero {
+    padding-top: var(--padding-top);
+    padding-top: 180px;
+}
+.hero img {
+    width: 150px;
+    max-width: 100%;
+    border-radius: 50%;
+    margin-bottom: 40px;
+}
+.hire-btn {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.hire-btn:hover {
+    padding: 14px 28px;
+}
+.avilable {
+    background-color: var(--bg-available-color);
+    padding: 14px 24px;
+    border-radius: 30px;
+    color: var(--available-text-color);
+    font-weight: 400;
+}
+.avilable .circle {
+    width: 7px;
+    height: 7px;
+    background-color: var(--available-text-color);
+    border-radius: 50%;
+}
+@media (max-width: 768px) {
+    .hero {
+        text-align: center;
+        padding-top: 150px;
+    }
+    .buttons-content {
+        justify-content: center;
+    }
+}
+/* About me */
+.about-me {
+    padding-top: 140px;
+    padding-bottom: var(--padding-top);
+}
+@media (max-width:767px) {
+    .about-me {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .about-me .images {
+        display: none;
+    }
+}
+.about-me .images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+@media (max-width: 768px) {
+    .about-me .images {
+        display: none;
+    }
+}
+.aos-animate .images {
+    opacity: 1;
+    transform: translateY(0);
+}
+.photo-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 220px;
+    padding: 10px;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, left 0.4s ease;
+}
+.photo-card:nth-child(1) {
+    transform: rotate(-10deg);
+}
+
+.photo-card:nth-child(2) {
+    transform: rotate(10deg);
+    position: relative;
+    left: -90px;
+    top: 45px;
+}
+.images:hover .photo-card:nth-child(1) {
+    transform: rotate(-10deg) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+}
+
+.images:hover .photo-card:nth-child(2) {
+    transform: rotate(10deg) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    left: -70px;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.photo-card p {
+    text-align: center;
+    font-weight: 500;
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+/* projects section */
+.projects {
+    padding-bottom: var(--padding-top);
+}
+.projects-content {
+    margin-top: 50px;
+}
+.projects .projects-content .image {
+    overflow: hidden;
+    border-radius: 10px;
+}
+.projects .projects-content img {
+    width: 100%;
+    height: auto;
+    transition: 0.3s;
+}
+.projects .projects-content .image:hover img {
+    transform: scale(1.05);
+}
+.projects .projects-content .project-card {
+    border: 1px solid var(--border-color);
+    padding: 15px; 
+    box-shadow: inset 0px 3px 0px 0px rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.projects .projects-content .project-card .text {
+    margin-top: 15px;
+}
+.projects .projects-content .project-card .text h2 {
+    font-size: 28px;
+}
+.projects .projects-content .project-card .text p {
+    font-size: 14px;
+}
+.projects .projects-content .project-card .view-btn {
+    background-color: #f2f2f2;
+    color: var(--primary-color);
+    font-weight: 600;
+    width: fit-content;
+    transition: 0.3s;
+    font-size: 14px;
+    border-radius: 17px;
+    padding: 14px 22px;
+    gap: 15px;
+}
+.projects .projects-content .project-card .button:hover {
+    background-color: var(--border-color);
+    gap: 20px;
+}
+
+code html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Aos library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- main css file -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="d-flex justify-content-center align-items-center w-100">
+        <div class="header-content mt-4 py-1 position-fixed ">
+            <nav class="links d-flex align-items-center ">
+                <div class="link d-flex align-items-center">
+                    <a href=""><i class="fa-regular fa-house"></i></a>
+                    <div class="line"></div>
+                </div>
+                <div class="link">
+                    <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <div class="link">
+                    <a href=""><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="link d-flex align-items-center">
+                    <a href=""><i class="fa-regular fa-file-lines"></i></a>
+                    <div class="line"></div>
+                </div>
+                <a class="btn ms-2" href="">Bolg</a>
+            </nav>
+        </div>
+    </header>
+    <!-- hero section -->
+    <section class="hero" id="container">
+        <img src="./images/5b62c6fe017dd4e27bc4c1510178ac0d~tplv-tiktokx-cropcenter_1080_1080.jpeg" alt="" data-aos="fade-up" data-aos-duration="1200">
+        <div class="headings mb-4" >
+            <h1 class="fw-bold" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Hi, I'm Ahmed Hesham.</h1>
+            <h1 class="fw-bold" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Frontend Developer</h1>
+        </div>
+        <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">Passionate about crafting modern, dynamic web experiences.<br> Every project is a new adventure.</p>
+        <div class="buttons-content d-flex align-items-center gap-3 mt-4" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
+            <a class="btn hire-btn" href="">Hire Me!</a>
+            <div class="avilable d-flex align-items-center gap-2">
+                <div class="circle"></div>
+                <span>Available </span> 
+            </div>
+        </div>
+    </section>
+    <!-- about me section -->
+    <section class="about-me" id="container">
+        <h2 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">About Me</h2>
+        <div class="text mt-4">
+            <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                I’m Ahmed Hesham, a 22-year-old developer from Egypt, specializing in crafting responsive, dynamic, and visually engaging websites using technologies like HTML, CSS, JavaScript, and React. I love turning ideas into reality and constantly push myself to learn new ways to make the web more interactive and inspiring.
+            </p>
+            <p data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                I’m a passionate Frontend Developer driven by creativity, precision, and the desire to build digital experiences that stand out. I believe great design isn’t just about looks — it’s about how it feels and performs. Every line of code I write aims to create something meaningful, modern, and impactful.
+            </p>
+            <p data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
+                Currently, I’m pursuing a diploma at Eraasoft to strengthen my technical foundation and explore advanced front-end concepts. My long-term goal is to grow into a world-class developer, collaborate with innovative teams, and contribute to projects that truly make a difference.
+            </p>
+        </div>
+        <div  class="images"data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1200">
+            <div class="photo-card">
+                <img src="./images/1d28bedf-74ac-40b1-b42b-673670dbff87" alt="">
+                <p>Ahmed</p>
+            </div>
+            <div class="photo-card position-relative">
+                <img src="./images/21c2b661-7347-49fb-b007-26a6a5f60431" alt="">
+                <p>Hesham</p>
+            </div>
+        </div>
+    </section>
+    <!-- Projects section -->
+    <section class="projects" id="container">
+        <div class="heading text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <h2>My Projects</h2>
+            <p>Favorite creations — blending design, code, and creativity.</p>
+        </div>
+        <div class="projects-content row g-3">
+            <div class="col-12 col-md-6" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" >
+                <div class="project-card">
+                    <div class="image">
+                        <img src="./images/pxxl.webp" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>Pxxl App</h2>
+                        <p>Enterprise-grade cloud deployment platform enabling instant deployment of websites</p>
+                    </div>
+                    <div class="button view-btn d-flex align-items-center">
+                        <a href="" class="text-dark">View Project</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000" >
+                <div class="project-card">
+                    <div class="image">
+                        <img src="./images/pxxl.webp" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>Pxxl App</h2>
+                        <p>Enterprise-grade cloud deployment platform enabling instant deployment of websites</p>
+                    </div>
+                    <div class="button view-btn d-flex align-items-center">
+                        <a href="" class="text-dark">View Project</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6" data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000" >
+                <div class="project-card">
+                    <div class="image">
+                        <img src="./images/pxxl.webp" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>Pxxl App</h2>
+                        <p>Enterprise-grade cloud deployment platform enabling instant deployment of websites</p>
+                    </div>
+                    <div class="button view-btn d-flex align-items-center">
+                        <a href="" class="text-dark">View Project</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000" >
+                <div class="project-card">
+                    <div class="image">
+                        <img src="./images/pxxl.webp" alt="">
+                    </div>
+                    <div class="text">
+                        <h2>Pxxl App</h2>
+                        <p>Enterprise-grade cloud deployment platform enabling instant deployment of websites</p>
+                    </div>
+                    <div class="button view-btn d-flex align-items-center">
+                        <a href="" class="text-dark">View Project</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Aos library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js" integrity="sha512-nKXmKvJyiGQy343jatQlzDprflyB5c+tKCzGP3Uq67v+lmzfnZUi/ZT+fc6ITZfSC5HhaBKUIvr/nTLCV+7F+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Main Js file -->
+    <script src="main.js"></script>
+</body>
+</html>
+
