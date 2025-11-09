@@ -7,11 +7,12 @@
     --icon-color:#5C5252;
     --border-color:#E7E4E4;
     --btn-bg-color:#F2F2F2;
-    --main-padding:140px;
+    --main-padding:120px;
     --padding-right:128px;
 }
 body {
     font-family: "Manrope", sans-serif;
+    overflow-x: hidden;
 }
 a {
     text-decoration: none;
@@ -32,11 +33,21 @@ img {
         padding-right: 100px;
         padding-left: 100px;
     }
+    .container.projects {
+    padding-left: 30px;
+    padding-right: 30px;
+    }
 }
 @media (min-width:992px) {
     .container {
-        max-width: 800px;
+        max-width: 900px;
         margin: 0 auto;
+    }
+}
+@media (max-width:576px) {
+    .container {
+        padding-left:20px;
+        padding-right: 20px;
     }
 }
 .btn {
@@ -45,9 +56,13 @@ img {
     font-size: 14px;
     font-weight: bold;
 }
+.btn:hover {
+    background-color: var(--primary-color);
+    color: var(--secondry-color);
+}
 h1 {
     font-size: 26px;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--primary-color);
 }
 p {
@@ -68,6 +83,17 @@ i {
 @media (min-width:576px) {
     i {
         font-size: 24px;
+    }
+}
+h2 {
+    font-weight: 700;
+    font-size: 22px;
+    text-align: center;
+}
+@media (min-width:767px) {
+    h2 {
+        font-size: 32px;
+        text-align: left;
     }
 }
 /* Header */
@@ -100,7 +126,7 @@ header {
     }
 }
 .hero img {
-    width: 180px;
+    width: 150px;
 }
 .avilable {
     background-color: var(--bg-available-color);
@@ -118,4 +144,40 @@ header {
     .hire-btn {
         font-size: 16px;
     }
+}
+/* About section */
+.about {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+.about .text {
+    text-align: center;
+}
+@media (min-width:767px) {
+    .about .text {
+        text-align: left;
+    }
+}
+/* Projects section */
+.projects {
+    padding-bottom: var(--main-padding);
+}
+.project-items .item {
+    border: 1px solid var(--border-color);
+    box-shadow: inset 0px 3px 0px 0px rgb(255, 255, 255);
+}
+.project-items .item .view-btn {
+    background-color: #f2f2f2;
+    color: var(--primary-color);
+    font-weight: 600;
+    width: fit-content;
+    transition: 0.3s;
+    font-size: 14px;
+    border-radius: 17px;
+    padding: 14px 22px;
+    gap: 15px;
+}
+/* Education & Experience section */
+.work {
+    padding-bottom: var(--main-padding);
 }
